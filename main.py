@@ -3,7 +3,7 @@ from requests import session
 from valclient.client import Client
 print('Valorant Agent Yoinker originally by https://github.com/deadly')
 print('updated by : https://github.com/Imu-D-sama')
-print('ver 0.2')
+print('ver 0.3')
 valid = False
 agents = {}
 seenMatches = []
@@ -29,8 +29,8 @@ else:
 
 while valid == False:
             try:
-                preferredAgent = input(f"Preferred Agent or dodge the match: ").lower()
-                if (preferredAgent in agents.keys() or preferredAgent == "dodge"):
+                preferredAgent = input(f"Preferred Agent or type dodge or ally: ").lower()
+                if (preferredAgent in agents.keys() or preferredAgent == "dodge" or preferredAgent == "ally"):
                     valid = True    
                 else:
                     print("Invalid Agent")
@@ -43,9 +43,20 @@ while True:
         sessionState = client.fetch_presence(client.puuid)['sessionLoopState']
         if((preferredAgent == "dodge") and (sessionState == "PREGAME") and (client.pregame_fetch_match()['ID'] not in seenMatches)):
             print('Agent Select Screen Found')
-            client.pregame_quit_match()
             seenMatches.append(client.pregame_fetch_match()['ID'])
+            client.pregame_quit_match()
             print('Successfully dodged the Match')
+        elif((preferredAgent == "ally") and (sessionState == "PREGAME") and (client.pregame_fetch_match()['ID'] not in seenMatches)):
+            print('Agent Select Screen Found')
+            seenMatches.append(client.pregame_fetch_match()['ID'])
+            ally = client.pregame_fetch_match()['AllyTeam']
+            ally_team = ally['TeamID']
+            ally_result = "Null"
+            if (ally_team == 'Red'):
+                ally_result = 'Attacker'
+            elif (ally_team == 'Blue'):
+                ally_result = 'Defender'
+            print('you are:', ally_result)
         elif ((sessionState == "PREGAME") and (client.pregame_fetch_match()['ID'] not in seenMatches) and (preferredAgent in agents.keys())):
             print('Agent Select Screen Found')
             client.pregame_select_character(agents[preferredAgent])
