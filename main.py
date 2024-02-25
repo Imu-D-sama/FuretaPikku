@@ -1,6 +1,6 @@
 import json
 from valclient.client import Client
-print('by : https://github.com/Imu-D-sama')
+print('FuretaPikku by : https://github.com/Imu-D-sama')
 print('ver 0.4')
 valid = False
 agents = {}
