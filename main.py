@@ -1,9 +1,7 @@
-import json, time
-from requests import session
+import json
 from valclient.client import Client
-print('Valorant Agent Yoinker originally by https://github.com/deadly')
-print('updated by : https://github.com/Imu-D-sama')
-print('ver 0.3')
+print('by : https://github.com/Imu-D-sama')
+print('ver 0.4')
 valid = False
 agents = {}
 seenMatches = []
@@ -33,10 +31,10 @@ while valid == False:
                 if (preferredAgent in agents.keys() or preferredAgent == "dodge" or preferredAgent == "ally"):
                     valid = True    
                 else:
-                    print("Invalid Agent")
+                    print("Invalid Agent or Word")
             except Exception as e:
                 print("Input Error")          
-print("Waiting for Agent Select")
+print("Waiting for Agent Select Screen")
 
 while True:
     try:
@@ -62,6 +60,14 @@ while True:
             client.pregame_select_character(agents[preferredAgent])
             client.pregame_lock_character(agents[preferredAgent])
             seenMatches.append(client.pregame_fetch_match()['ID'])
+            ally = client.pregame_fetch_match()['AllyTeam']
+            ally_team = ally['TeamID']
+            ally_result = "Null"
+            if (ally_team == 'Red'):
+                ally_result = 'Attacker'
+            elif (ally_team == 'Blue'):
+                ally_result = 'Defender'
+            print('you are:', ally_result)
             print('Successfully Locked ' + preferredAgent.capitalize())
     except Exception as e:
         print('', end='') 
