@@ -15,13 +15,14 @@
         "sage": "569fdd95-4d10-43ab-ca70-79becc718b46",
         "chamber": "22697a3d-45bf-8dd7-4fec-84a9e28c69d7",
         "omen": "8e253930-4c05-31dd-1b6c-968525494517",
-        "brimstome": "9f0d8ba9-4140-b941-57d3-a7ad57c6b417",
+        "brimstone": "9f0d8ba9-4140-b941-57d3-a7ad57c6b417",
         "astra": "41fb69c1-4189-7b37-f117-bcaf1e96f1bf",
         "viper": "707eab51-4836-f488-046a-cda6bf494859",
         "fade": "dade69B4-4f5a-8528-247b-219e5a1facd6",
         "gekko": "E370FA57-4757-3604-3648-499E1F642D3F",
         "deadlock": "CC8B64C8-4B25-4FF9-6E7F-37B4DA43D235",
-        "iso": "0E38B510-41A8-5780-5E8F-568B2A4F2D6C"
+        "iso": "0E38B510-41A8-5780-5E8F-568B2A4F2D6C",
+        "clove": "1DBF2EDD-4729-0984-3115-DAA5EED44993"
     },
     "region": "NULL",
     "ran": false
