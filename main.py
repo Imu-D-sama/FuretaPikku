@@ -1,7 +1,7 @@
 import json
 from valclient.client import Client
 print('FuretaPikku by : https://github.com/Imu-D-sama')
-print('ver 0.4')
+print('ver 0.5')
 valid = False
 agents = {}
 seenMatches = []
