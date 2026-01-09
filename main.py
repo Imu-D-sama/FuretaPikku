@@ -2281,6 +2281,7 @@ def getLoadoutsPro():
             if not infoPlayers:
                 buttonStartText.configure(text='No Players Found!!', text_color=red_text)
                 enProButtons()
+                return
             loadouts = client.coregame_fetch_match_loadouts()
             loadouts = loadouts['Loadouts']
             for loadout in loadouts:
