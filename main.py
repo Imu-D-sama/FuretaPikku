@@ -757,7 +757,17 @@ def settingsMenu():
         newR = json.load(f)
         instalockMode = newR['instalockMode']
     lockSelectorSett.set(instalockMode)
-      
+    
+    WeaponOrderSettLabel = customtkinter.CTkLabel(settFrame, text="Weapon Order:")
+    WeaponOrderSettLabel.pack(pady=7)
+    def resetWeaponOrder():
+        config['skinsOrder'] = defaultConfig['skinsOrder']
+        print(f'Reset Weapon Order to Default')
+        with open(configPath, 'w') as file:
+            json.dump(config, file, indent=4)
+        settingsWindow.destroy()
+    WeaponOrderResetSett = customtkinter.CTkButton(settFrame, command= resetWeaponOrder, text="Reset")
+    WeaponOrderResetSett.pack(pady=7)
 settImg = customtkinter.CTkImage(light_image=settingsImage, dark_image=settingsImage, size=(20,20))
 settingsButton = customtkinter.CTkButton(app, text="", image=settImg, width=22, fg_color="transparent", command=settingsMenu)
 settingsButton.place(rely=0, relx=0.96)
