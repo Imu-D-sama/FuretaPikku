@@ -88,6 +88,7 @@ defaultConfig = {
         "Sheriff",
         "Melee",
         "Classic",
+        "Bandit",
         "Ghost",
         "Odin",
         "Ares",
@@ -160,6 +161,15 @@ defaultSkins= {
         ],
         "link": "https://media.valorant-api.com/weapons/29a0cfab-485b-f5d5-779a-b59f85e204a8/displayicon.png",
         "defaultChroma": "4b2d5b4f-4955-4208-286c-abadec250cdd"
+    },
+    "410b2e0b-4ceb-1321-1727-20858f7f3477": {
+        "name": "Default Bandit",
+        "size": [
+            145,
+            75
+        ],
+        "link": "https://media.valorant-api.com/weapons/410b2e0b-4ceb-1321-1727-20858f7f3477/displayicon.png",
+        "defaultChroma": "b576b9f1-407d-310a-6009-6287fb6829bc"
     },
     "1baa85b4-4c70-1284-64bb-6481dfc3bb4e": {
         "name": "Default Ghost",
